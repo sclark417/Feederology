@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    
+
+    var YOUR_APP_KEY = "f4b597f62e7762dd1104ed1206f93828";
+    var YOUR_APP_ID = "58d62880";
+    var searchTerm  = "healthy beef warm weather";
+    var resultLength = "25"
+
+    var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&to="+resultLength;
+
+
+    $.ajax ({            
+        url: apiQuery,
+        method: "GET"
+       }).then(function(response) {
+           
+        console.log(response)
+
+       });
+
+
+
+</script>
+</body>
+</html>
