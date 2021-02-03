@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +9,16 @@
 
     <!-- icon links -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./boxSizing.css" rel="stylesheet">
 
 </head>
 
 
 
-<body>
+<body class="light-blue lighten-5">
 
     <nav>
+
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo center"><i class="material-icons">cloud</i>Feedeorology</a>
 
@@ -25,11 +26,13 @@
     </nav>
 
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper light-blue darken-3">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
+
                     <label class="label-icon" for="search"></label>
+
                     <i class="material-icons">close</i>
                 </div>
             </form>
@@ -47,11 +50,8 @@
 
         </div>
     </div>
-        <div class="divider"></div>
+    <br>
 
-<div class="container"></div>
-
-        <div class="row">
 
            <div class="col m6 s12">
                 <div class="card" id='current-forecast'></div>
@@ -59,34 +59,20 @@
             </div>
                 <div class="card col m6 s12" id="recipes">
 
+
+
+            </div>
+
+        </dic>
+        <div class="card col m6 s12 mirror" id="recipes">
+
+            <h2>Recipes:</h2>
+            <div class="card Ext-Card">
+                <div class="card Int-Card">
+
                     <h1>Recipes:</h1>
                     <div class="card Ext-Card">
                     <div class="card Int-Card">
-                      
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
-
-
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
-
-
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
 
 
                     </div>
@@ -94,16 +80,17 @@
 
                 </div>
             </div>
-                </div>
-           
-
-
         </div>
+
+
+
+    </div>
 </div>
+    </div>
 
 
 
-    
+
 
 
 
@@ -116,9 +103,16 @@
     <!-- jQuery JAvascript link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
     <script src="script.js"></script>
 
     
+
+
+    <script src="food.js"></script>
+
+
+
 
 </body>
 
