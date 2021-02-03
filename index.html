@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Feederology</title>
     <!-- Compiled and minified CSS Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- icon links -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./boxSizing.css" rel="stylesheet">
+    <link href="./assets/css/boxSizing.css" rel="stylesheet">
 
+    <!-- favicon information -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 </head>
 
 
@@ -19,8 +20,9 @@
 <body class="light-blue lighten-5">
 
     <nav>
-        <div class="nav-wrapper light-blue darken-4">
-            <a href="#!" class="brand-logo center"><i class="material-icons">cloud</i>Feederology</a>
+
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"><i class="material-icons">cloud</i>Feedeorology</a>
 
         </div>
     </nav>
@@ -30,7 +32,9 @@
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+
+                    <label class="label-icon" for="search"></label>
+
                     <i class="material-icons">close</i>
                 </div>
             </form>
@@ -50,66 +54,59 @@
     </div>
     <br>
 
-    <div class="container">
 
-    <div class="row">
-
-        <dic class="card col m5 s12 mirror">
-            <h2 id="City">City Name</h2>
-            <div class="card">
+           <div class="col m6 s12">
+                <div class="card" id='current-forecast'></div>
                 
-                <img scr="" id="weather_icon" />
-                <p id="temp">Temp</p>
-                <p id="wind">Wind speed here</p>
-
-
             </div>
-
-        </dic>
-        <div class="card col m6 s12 mirror" id="recipes">
-
-            <h2>Recipes:</h2>
-            <div class="card Ext-Card">
-                <div class="card Int-Card">
-
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
+                <div class="card col m6 s12" id="recipes">
 
 
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
-
-
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur velit
-                            enim,
-                            optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                            voluptatum
-                            nesciunt maiores corrupti cumque.</p>
-
-
-                    </div>
+                    <img scr="" id="weather_icon" />
+                    <p id="temp">Temp</p>
+                    <p id="wind">Wind speed here</p>
 
 
                 </div>
+
+            </dic>
+            <div class="card col m6 s12 mirror" id="recipes">
+
+                    <h1>Recipes:</h1>
+                    <div class="card Ext-Card">
+                    <div class="card Int-Card">
+
+                        </div>
+                        <div class="card">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur
+                                velit
+                                enim,
+                                optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
+                                voluptatum
+                                nesciunt maiores corrupti cumque.</p>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <footer class="page-footer light-blue darken-3">
+
+        <div class="footer-copyright light-blue darken-4">
+            <div class="container">
+                © 2021 Copyright Feederology
             </div>
         </div>
-
-
-
-    </div>
-</div>
-    </div>
+    </footer>
 
 
 
@@ -117,14 +114,21 @@
 
 
 
-
-
-
+    
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- jQuery JAvascript link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="script.js"></script>
+
+    
+
+
+    <script src="food.js"></script>
+
 
 
 
