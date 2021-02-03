@@ -1,0 +1,11 @@
+.mirror {
+
+    height: 400px;
+    margin-inline-end: 5px;
+
+}
+
+.Ext-Card {
+    height: 275px;
+    overflow-y: scroll
+}
