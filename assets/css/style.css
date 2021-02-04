@@ -22,3 +22,7 @@ main {
   font-weight: bolder;
   font-style: italic;
 }
+
+.appendingCard .card {
+  margin: 10px
+}
