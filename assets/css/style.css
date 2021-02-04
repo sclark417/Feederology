@@ -1,21 +1,24 @@
 .mirror {
-
-    height: 450px;
-    margin-inline-end: 5px;
-
+  height: 450px;
+  margin-inline-end: 5px;
 }
 
 .Ext-Card {
-    height: 275px;
-    overflow-y: scroll
+  height: 275px;
+  overflow-y: scroll;
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.brand-logo {
+  font-weight: bolder;
+  font-style: italic;
 }
