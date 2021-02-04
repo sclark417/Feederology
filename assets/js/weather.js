@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 
     function getCurrentWeather(searchValue) {

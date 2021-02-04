@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feederology</title>
+    <title>Feedeorology</title>
     <!-- Compiled and minified CSS Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- icon links -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./assets/css/boxSizing.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 
     <!-- favicon information -->
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
 </head>
 
 
@@ -20,8 +22,7 @@
 <body class="light-blue lighten-5">
 
     <nav>
-
-        <div class="nav-wrapper">
+        <div class="nav-wrapper light-blue darken-4">
             <a href="#!" class="brand-logo center"><i class="material-icons">cloud</i>Feedeorology</a>
 
         </div>
@@ -32,9 +33,7 @@
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
-
-                    <label class="label-icon" for="search"></label>
-
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
@@ -54,43 +53,38 @@
     </div>
     <br>
 
+    <div class="container">
 
-           <div class="col m6 s12">
-                <div class="card" id='current-forecast'></div>
-                
+        <div class="row">
+
+            <div class="card col m5 s12 mirror">
+                <class class="card">
+                    <div class="card" id='current-forecast'></div>
+
+                </class>
+
             </div>
-                <div class="card col m6 s12" id="recipes">
 
-
-                    <img scr="" id="weather_icon" />
-                    <p id="temp">Temp</p>
-                    <p id="wind">Wind speed here</p>
-
-
-                </div>
-
-            </dic>
             <div class="card col m6 s12 mirror" id="recipes">
 
-                    <h1>Recipes:</h1>
-                    <div class="card Ext-Card">
+                <h2>Recipes:</h2>
+                <div class="card Ext-Card">
                     <div class="card Int-Card">
 
-                        </div>
-                        <div class="card">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis molestias pariatur
-                                velit
-                                enim,
-                                optio quae reprehenderit quo architecto veniam ducimus provident ad nam, quisquam id
-                                voluptatum
-                                nesciunt maiores corrupti cumque.</p>
+                        <h1>Recipes:</h1>
+                        <div class="card Ext-Card">
+                            <div class="card Int-Card">
+
+
+                            </div>
 
 
                         </div>
-
-
                     </div>
                 </div>
+
+
+
             </div>
 
 
@@ -103,7 +97,7 @@
 
         <div class="footer-copyright light-blue darken-4">
             <div class="container">
-                © 2021 Copyright Feederology
+                © 2021 Copyright Feedeorology
             </div>
         </div>
     </footer>
@@ -113,24 +107,17 @@
 
 
 
-
-    
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- jQuery JAvascript link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- weather api javascript -->
+    <script src="./assets/js/weather.js"></script>
 
-    <script src="script.js"></script>
-
-    
-
-
-    <script src="food.js"></script>
-
-
-
+    <!-- edemam api javascript -->
+    <script src="./assets/js/food.js"></script>
 
 </body>
 
