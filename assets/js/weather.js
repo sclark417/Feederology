@@ -140,22 +140,24 @@ function getCurrentWeather(searchValue) {
             var YOUR_APP_KEY = "f4b597f62e7762dd1104ed1206f93828";
             var YOUR_APP_ID = "58d62880";
             var searchTerm  = JSON.stringify(searchArray);
-            var resultLength = "10";
+            // var resultLength = "10";
+            // var to = ;
             var healthLabels = JSON.stringify(healthLabelArray).toLowerCase();
             var healthLabelsAdjusted = healthLabels.replace(/ /g,"");
             var healthLabelsAdjustedTwice = healthLabelsAdjusted.substring(9).slice(0,-1);
+            
         
             
 
             if (healthLabels !== "[]"){
 
-            var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&to="+resultLength+"&health="+healthLabelsAdjustedTwice;
+            var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&health="+healthLabelsAdjustedTwice;
 
             console.log(apiQuery)
 
             } else {
 
-            var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&to="+resultLength;
+            var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY;
 
             console.log(apiQuery)
 
@@ -168,10 +170,54 @@ function getCurrentWeather(searchValue) {
                     method: "GET"
                 }).then(function(response) {
                     
+                    console.log(response.count)
+
+                    $(".appendingCard").empty();
+
+
+                    var to = response.count
+
+
+                    if (response.count < 100) {
+                    var maxLess10 = (response.count)-10
+                   
+                    } else {
+                    var maxLess10 = 30;
+                    var to = 100
+                    }
+
+
+
+                    var from = Math.floor(Math.random()*maxLess10)
+
+                    console.log(from);
+                    console.log(to);
+                    
+
+
+                    if (healthLabels !== "[]"){
+
+                        var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&from="+ from + "&to="+ to + "&health="+healthLabelsAdjustedTwice;
+            
+                        console.log(apiQuery)
+            
+                        } else {
+            
+                        var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY+"&from="+ from + "&to="+ to;
+                        }
+            
+                        console.log(apiQuery)
+
+                    $.ajax ({            
+                        url: apiQuery,
+                        method: "GET"
+                    }).then(function(response) {
+
                     console.log(response)
 
-                    for (var i = 0; i < response.hits.length; i++) {
-<<<<<<< HEAD
+                
+
+                    for (var i = 0; i < 10; i++) {
                         var cardEl = $('<div class="card col s12 m6 card-image">');
                         var recipeImage = $("<img>");
                         var recipeSnip = $("<p>");
@@ -180,18 +226,6 @@ function getCurrentWeather(searchValue) {
                         recipeImage.attr("src",response.hits[i].recipe.image)
                         recipeSnip.append(`<a href="${response.hits[i].recipe.url}" target="_blank" >Recipe Here</a>`)
                         $(".appendingCard").append(cardEl);
-=======
-
-                        var cardEl = $('<div class="card col s12 m5" id="recipe">');
-                        var recipeImage = $("<img>");
-                        var recipeSnip = $("<p>");
-    
-                        cardEl.text(response.hits[i].recipe.label);
-                        recipeImage.attr("src",response.hits[i].recipe.image)
-                        recipeSnip.append(response.hits[i].recipe.url)
-                        
-                        $(".appendingCard").append(cardEl)
->>>>>>> main
                         $(cardEl).append(recipeImage)
                         $(cardEl).append(recipeSnip)
                            
@@ -204,7 +238,7 @@ function getCurrentWeather(searchValue) {
                     $("#recipe").mouseout(function() {
                         $('#recipe').animate({ height: 'auto', width: 'auto'});
                     });
-``
+                });
                });             
         };
     })

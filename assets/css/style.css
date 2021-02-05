@@ -18,25 +18,7 @@ main {
   flex: 1 0 auto;
 }
 
-<<<<<<< HEAD
 .checkBox {
   margin-inline-end: 30px;
   font-size: 24px;
 }
-=======
-.brand-logo {
-  font-weight: bolder;
-  font-style: italic;
-}
-
-.appendingCard {
-  padding-left: 15px;
-
-}
-
-
-.appendingCard .card {
-  margin: 15px;
-
-}
->>>>>>> main
