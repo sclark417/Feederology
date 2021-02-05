@@ -9,9 +9,10 @@ function getCurrentWeather(searchValue) {
         url: apiQuery,
         method: "GET",
     }).then(function(data) {
+        console.log(data)
 
         $('#current-forecast').append(`
-        <h2 class='city-name'>${data.name}</h2>
+        <h4 class='city-name'>${data.name}</h4>
         <img style='inline' src = 'http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' width='70px height='70px' alt='weather icon'>
         <p class='temp'>Temperature: ${parseFloat((data.main.temp).toFixed(0))}°F</p>
         <p class='humid'>Humidity: ${parseFloat((data.main.humidity).toFixed(0))}%</p>
@@ -62,17 +63,28 @@ function getCurrentWeather(searchValue) {
 
                     for (var i = 0; i < response.hits.length; i++) {
 
-                        var cardEl = $('<div class="card col s12 m5">');
+                        var cardEl = $('<div class="card col s12 m5" id="recipe">');
                         var recipeImage = $("<img>");
                         var recipeSnip = $("<p>");
-                        $(".appendingCard").append('<div class=card>')
+    
                         cardEl.text(response.hits[i].recipe.label);
                         recipeImage.attr("src",response.hits[i].recipe.image)
-                        recipeSnip.text(response.hits[i].recipe.url)
-                        $(".appendingCard").append(cardEl);
+                        recipeSnip.append(response.hits[i].recipe.url)
+                        
+                        $(".appendingCard").append(cardEl)
                         $(cardEl).append(recipeImage)
                         $(cardEl).append(recipeSnip)
-                    }
+                           
+                    }      
+                    
+                    $("#recipe").mouseover(function() {
+                        $('#recipe').animate({height: '10%', width: '10%'});
+                    });
+
+                    $("#recipe").mouseout(function() {
+                        $('#recipe').animate({ height: 'auto', width: 'auto'});
+                    });
+``
                });             
         };
     })
@@ -90,5 +102,6 @@ $('#search').keydown(function (e) {
     
         
     
-});
-        
+})
+
+ 
