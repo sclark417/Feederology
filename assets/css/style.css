@@ -30,6 +30,3 @@ main {
 .appendingCard .card {
   margin: 15px;
 }
-.recipe-img {
-  object-fit: cover;
-}
