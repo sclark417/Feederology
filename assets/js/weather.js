@@ -185,12 +185,13 @@ $(document).ready(function () {
 
       for (var i = 0; i < response.hits.length; i++) {
           var cardEl = $('<div class="card col s12 m5" id="recipe">');
-          var recipeImage = $('<img class="recipe-img">');
-          var recipeSnip = $("<p>");
+          var recipeImage = $('<img style="height:30%; width:100%">');
+          var recipeSnip = $(`<p style="text-align: center;
+          font-weight: bold;">`);
 
-          cardEl.text(response.hits[i].recipe.label);
+          // cardEl.text(response.hits[i].recipe.label);
           recipeImage.attr("src", response.hits[i].recipe.image);
-          recipeSnip.append(response.hits[i].recipe.url);
+          recipeSnip.append(response.hits[i].recipe.label);
 
           $(".appendingCard").append(cardEl);
           $(cardEl).append(recipeImage);
@@ -239,18 +240,3 @@ $(document).ready(function () {
   init()
 
 });
-
-  
-// function renderLastGrade() {
-//   // Use JSON.parse() to convert text to JavaScript object
-//   var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
-//   // Check if data is returned, if not exit out of the function
-//   if (lastGrade !== null) {
-//   document.getElementById("saved-name").innerHTML = lastGrade.student;
-//   document.getElementById("saved-grade").innerHTML = lastGrade.grade;
-//   document.getElementById("saved-comment").innerHTML = lastGrade.comment;
-//   } else {
-//     return;
-//   }
-// }
-// })
