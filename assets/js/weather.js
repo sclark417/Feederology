@@ -157,10 +157,11 @@ $(document).ready(function () {
         if (response.count < 100 && response.count >= 10) {
         var maxLess10 = (response.count)-10
         } else if (response.count < 10) {
-        var maxLess10 = response.count
+        var maxLess10 = response.count;
+        var from = 0;
         } else {
         var maxLess10 = 30;
-        var to = 100
+        var to = 100;
         }
 
         var from = Math.floor(Math.random()*maxLess10)
