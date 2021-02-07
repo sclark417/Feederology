@@ -8,7 +8,7 @@ There were many challenges while making this site, most notably getting the two 
 
 Our application is deployed and ready for users at the following link.
 
-link to live site: ("https://github.com/sclark417/Feederology")
+link to live site: ("https://sclark417.github.io/Feederology/.")
 
 I have also included the link to our proposal that includes a demonstration and a deeper look into the sites technology and purpose. 
 
