@@ -154,8 +154,10 @@ $(document).ready(function () {
         $(".appendingCard").empty();
         var to = response.count
         
-        if (response.count < 100) {
+        if (response.count < 100 && response.count >= 10) {
         var maxLess10 = (response.count)-10
+        } else if (response.count < 10) {
+        var maxLess10 = response.count
         } else {
         var maxLess10 = 30;
         var to = 100
