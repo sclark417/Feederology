@@ -190,7 +190,7 @@ $(document).ready(function () {
           console.log(response)
           
           for (var i = 0; i < 10; i++) {
-            var cardEl = $('<div class="card col s12 m6 card-image">');
+            var cardEl = $('<div class="card col s12 m5 card-image">');
             var recipeImage = $("<img>");
             var recipeSnip = $("<p>");
             $(".appendingCard").append('<div class=card >')
