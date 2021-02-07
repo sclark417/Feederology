@@ -1,16 +1,15 @@
+
 $(document).ready(function () {
+  $(".modal").modal();
   function getCurrentWeather(searchValue) {
     console.log(searchValue);
-
     var apiKey = "2475c48a9f27efa0b6bdd756142d1e2f";
-    var apiQuery = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`;
-
+    var apiQuery = https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey};
     $.ajax({
       url: apiQuery,
       method: "GET",
     }).then(function (data) {
       console.log(data);
-
       $("#current-forecast").append(`
         <h4 class='city-name'>${data.name}</h4>
         <img style='inline' src = 'http://openweathermap.org/img/wn/${
@@ -25,24 +24,16 @@ $(document).ready(function () {
         <p class='wind'>Wind Speed: ${parseFloat(
           data.wind.speed.toFixed(0)
         )} MPH</p>`)
-
       var temperatureDisplay = data.main.temp
-
       console.log(temperatureDisplay)
-
-
       if (temperatureDisplay !== null){
-
       var searchArray = [];
-
       var healthySelector = document.getElementById("healthySelector");
       var nutFreeSelector = document.getElementById("nutFreeSelector");
       var alcoholFreeSelector = document.getElementById("alcoholFreeSelector");
       var glutenFreeSelector = document.getElementById("glutenFreeSelector");
       var sugarFreeSelector = document.getElementById("sugarFreeSelector");
       var lowSodiumSelector = document.getElementById("lowSodiumSelector");
-
-
       var spanHealthySelector = document.getElementById("spanHealthySelector");
       var spanNutFreeSelector = document.getElementById("spanNutFreeSelector");
       var spanAlcoholFreeSelector = document.getElementById("spanAlcoholFreeSelector");
@@ -50,8 +41,6 @@ $(document).ready(function () {
       var spanSugarFreeSelector = document.getElementById("spanSugarFreeSelector");
       var spanLowSodiumFreeSelector = document.getElementById("spanLowSodiumFreeSelector");
       }
-    
-
       if (temperatureDisplay < 10 && temperatureDisplay > -50) 
       {searchArray += " Very Cold Weather"
       } else if (temperatureDisplay > 10 && temperatureDisplay < 30) {
@@ -67,11 +56,7 @@ $(document).ready(function () {
       }else if (temperatureDisplay > 80) {
       searchArray += "Very Hot Weather"
       }
-
-
       var healthLabelArray = [];
-      
-
       switch (healthySelector.checked){
           case healthySelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+ spanHealthySelector.textContent
@@ -80,7 +65,6 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       switch (nutFreeSelector.checked){
           case nutFreeSelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+ spanNutFreeSelector.textContent
@@ -89,7 +73,6 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       switch (alcoholFreeSelector.checked){
           case alcoholFreeSelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+ spanAlcoholFreeSelector.textContent
@@ -98,7 +81,6 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       switch (glutenFreeSelector.checked){
           case glutenFreeSelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+spanGlutenFreeSelector.textContent
@@ -107,7 +89,6 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       switch (sugarFreeSelector.checked){
           case sugarFreeSelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+ spanSugarFreeSelector.textContent
@@ -116,7 +97,6 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       switch (lowSodiumSelector.checked){
           case lowSodiumSelector.checked = true:
               healthLabelArray = healthLabelArray +"&health="+ spanLowSodiumFreeSelector.textContent
@@ -125,74 +105,48 @@ $(document).ready(function () {
               healthLabelArray = healthLabelArray
           break;
       }
-
       console.log(healthLabelArray)
-      
       var YOUR_APP_KEY = "f4b597f62e7762dd1104ed1206f93828";
       var YOUR_APP_ID = "58d62880";
       var searchTerm  = JSON.stringify(searchArray)
       var healthLabels = JSON.stringify(healthLabelArray).toLowerCase();
       var healthLabelsAdjusted = healthLabels.replace(/ /g,"");
       var healthLabelsAdjustedTwice = healthLabelsAdjusted.substring(9).slice(0,-1);
-      
       if (healthLabels !== "[]"){
-
       var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&health="+healthLabelsAdjustedTwice;
-
       console.log(apiQuery)
-
       } else {
-
       var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY;
-
       console.log(apiQuery)
       }
-
-
       $.ajax ({            
           url: apiQuery,
           method: "GET"
       }).then(function(response) { 
         console.log(response.count)
-
         $(".appendingCard").empty();
         var to = response.count
-
-
         if (response.count < 100) {
         var maxLess10 = (response.count)-10
         } else {
         var maxLess10 = 30;
         var to = 100
         }
-
         var from = Math.floor(Math.random()*maxLess10)
-
         console.log(from);
         console.log(to);
-        
         if (healthLabels !== "[]"){
-
           var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY +"&from="+ from + "&to="+ to + "&health="+healthLabelsAdjustedTwice;
-
           console.log(apiQuery)
-
           } else {
-
           var apiQuery = "https://api.edamam.com/search?q="+searchTerm+"&app_id="+ YOUR_APP_ID +"&app_key="+ YOUR_APP_KEY+"&from="+ from + "&to="+ to;
           }
-
           console.log(apiQuery)
-
         $.ajax ({            
             url: apiQuery,
             method: "GET"
         }).then(function(response) {
-
           console.log(response)
-
-      
-
           for (var i = 0; i < 10; i++) {
             var cardEl = $('<div class="card col s12 m6 card-image">');
             var recipeImage = $("<img>");
@@ -200,16 +154,15 @@ $(document).ready(function () {
             $(".appendingCard").append('<div class=card >')
             cardEl.text(response.hits[i].recipe.label);
             recipeImage.attr("src",response.hits[i].recipe.image)
-            recipeSnip.append(`<a href="${response.hits[i].recipe.url}" target="_blank" >Recipe Here</a>`)
+            recipeSnip.append(<a href="${response.hits[i].recipe.url}" target="_blank" >Recipe Here</a>)
             $(".appendingCard").append(cardEl);
             $(cardEl).append(recipeImage)
-            $(cardEl).append(recipeSnip)      
+            $(cardEl).append(recipeSnip)
           }       
         })              
       })
     })
   }
-
   $('#search').keydown(function (e) {
     let city = $('#search').val()
     if (e.which === 13) {
@@ -219,8 +172,6 @@ $(document).ready(function () {
     getCurrentWeather(city);   
     }
   });
-
-
   function previousCity() {
     var lastCity = JSON.parse(localStorage.getItem('city'));
     if (lastCity !== null) {
@@ -229,18 +180,26 @@ $(document).ready(function () {
       return;
     }
   }
-
   function init() {
     previousCity()
   }
-
   init()
-
-  $("#recipe").mouseover(function() {
-    $(this).animate({ width: '100%'});
-    $(this).mouseout(function (){
-      $(this).animate({width: 'auto'})  
-    });
-  })
-
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
