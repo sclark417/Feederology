@@ -4,7 +4,7 @@
 
 With this app we are combining both weather and food to create a user experience based on the mood of the weather. We worked as a team of developers to combine the usage of OpenWeatherMap API and Edemam API to create a site that will help the user answer the age old question of "what is for dinner?"
 
-There were many challenges while making this site, most notably getting the two APIs to work together and not over using our API keys. In addition there was a steep learning curve that came from the usage of multiple branches on gitHub, but in the ned we over came those challenges. 
+There were many challenges while making this site, most notably getting the two APIs to work together and not over using our API keys. In addition there was a steep learning curve that came from the usage of multiple branches on gitHub, but in the end we over came those challenges. 
 
 Our application is deployed and ready for users at the following link.
 
